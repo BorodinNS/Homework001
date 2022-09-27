@@ -89,5 +89,5 @@ void Zadacha23()
 
 //Zadacha19Array();
 //Zadacha19();
-// Zadacha21();
-Zadacha23();
+//Zadacha21();
+//Zadacha23();
