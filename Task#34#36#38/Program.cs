@@ -57,7 +57,6 @@ void Zadacha34()
     FillArray(numbers, 100, 1000);
     PrintArray(numbers);
     FindEvenNumber(numbers);
-
 }
 
 
@@ -77,10 +76,46 @@ void Zadacha36()
 
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 // [3,21 7,04 22,93 -2,71 78,24] -> max = 78,24, min = - 2,71, difference = 80,95
+
+void FillArrayDouble(double[] numbers, int minValue = 0, int maxValue = 100)
+{
+    maxValue++;
+    Random random = new Random();
+    for (int i = 0; i < numbers.Length; i++)
+    {
+        numbers[i] = Math.Round(random.NextDouble() * 20 - 10, 2);
+    }
+}
+
+void PrintArrayDouble(double[] num)
+
+
+{
+    for (int i = 0; i < num.Length; i++)
+    {
+        Console.Write(num[i] + "\t");
+    }
+    Console.WriteLine();
+}
+
 void Zadacha38()
 {
-
+    int size = 12;
+    double[] numbers = new double[size];
+    FillArrayDouble(numbers, -9, 9);
+    PrintArrayDouble(numbers);
+    double max = 0;
+    double min = 0;
+    double diff;
+    for (int i = 0; i < size; i++)
+    {
+        if (numbers[i] > max) max = numbers[i];
+        if (numbers[i] < min) min = numbers[i];
+    }
+    diff = max - min;
+    Console.WriteLine($"Разница между максимальным числом  |{max}| и минимальным числом |{min}| равна |{diff}|");
 }
 
 // Zadacha34();
 // Zadacha36();
+Zadacha38();
